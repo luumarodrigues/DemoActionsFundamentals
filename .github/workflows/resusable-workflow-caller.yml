@@ -9,7 +9,7 @@ jobs:
   CI:
     uses: luumarodrigues/SRE.Templates/.github/workflows/build-dotnet.yml@master
     with:
-      buildConfiguration: Resease
+      buildConfiguration: Release
       
   CD:
     uses: luumarodrigues/SRE.Templates/.github/workflows/deploy-webapp@master
