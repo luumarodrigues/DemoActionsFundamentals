@@ -16,6 +16,6 @@ jobs:
     needs: CI
     with:
       environment: 'prod'
-      app-name: ${{ env.AZURE_WEBAPP_NAME }}
+      app-name: 'teste'
     secrets:
       publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
