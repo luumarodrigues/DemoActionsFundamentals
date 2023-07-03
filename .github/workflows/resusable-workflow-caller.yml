@@ -5,6 +5,9 @@ on:
   push:
     branches: [ master ]
     
+env:
+  env_var: ${{ vars.dev }}
+  
 jobs:
   CI:
     uses: luumarodrigues/SRE.Templates/.github/workflows/build-dotnet.yml@master
@@ -18,5 +21,4 @@ jobs:
       environment: 'dev'
     secrets:
       publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-      app-name: ${{ env.AZURE_WEBAPP_NAME }}
-      
+      app-name: ${{ vars.AZURE_WEBAPP_NAME }}
