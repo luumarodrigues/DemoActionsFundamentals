@@ -13,6 +13,7 @@ jobs:
       
   CD:
     uses: luumarodrigues/SRE.Templates/.github/workflows/deploy-webapp.yml@master
+    needs: CI
     with:
       environment: 'dev'
       app-name: ${{ env.AZURE_WEBAPP_NAME }}
