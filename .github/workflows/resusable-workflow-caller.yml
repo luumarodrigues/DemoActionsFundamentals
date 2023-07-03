@@ -15,7 +15,7 @@ jobs:
     uses: luumarodrigues/SRE.Templates/.github/workflows/deploy-webapp.yml@master
     needs: CI
     with:
-      environment: 'dev'
+      environment: 'prod'
       app-name: ${{ env.AZURE_WEBAPP_NAME }}
     secrets:
       publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
