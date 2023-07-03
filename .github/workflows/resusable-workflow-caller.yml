@@ -11,20 +11,18 @@ jobs:
     with:
       buildConfiguration: Release
       
-  CD:
-    uses: luumarodrigues/SRE.Templates/.github/workflows/deploy-webapp.yml@master
-    needs: CI
-    with:
-      environment: 'prod'
-      app-name: 'teste'
-    secrets:
-      publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-      
   CD-dev:
     uses: luumarodrigues/SRE.Templates/.github/workflows/deploy-webapp.yml@master
     needs: CI
     with:
       environment: 'dev'
-      app-name: 'teste'
+    secrets:
+      publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+      
+  CD-prod:
+    uses: luumarodrigues/SRE.Templates/.github/workflows/deploy-webapp.yml@master
+    needs: [CI, CD-dev]
+    with:
+      environment: 'prod'
     secrets:
       publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
