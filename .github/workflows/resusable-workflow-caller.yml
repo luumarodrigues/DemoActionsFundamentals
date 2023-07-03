@@ -5,6 +5,9 @@ on:
   push:
     branches: [ master ]
     
+env:
+  AZURE_WEBAPP_NAME: ${{ env.AZURE_WEBAPP_NAME }}
+    
 jobs:
   CI:
     uses: luumarodrigues/SRE.Templates/.github/workflows/build-dotnet.yml@master
