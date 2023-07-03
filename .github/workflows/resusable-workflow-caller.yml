@@ -12,7 +12,7 @@ jobs:
       buildConfiguration: Release
       
   CD:
-    uses: luumarodrigues/SRE.Templates/.github/workflows/deploy-webapp@master
+    uses: luumarodrigues/SRE.Templates/.github/workflows/deploy-webapp.yml@master
     with:
       environment: 'dev'
       app-name: ${{ env.AZURE_WEBAPP_NAME }}
