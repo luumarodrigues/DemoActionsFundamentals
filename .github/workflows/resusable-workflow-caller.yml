@@ -1,4 +1,4 @@
-name:  ci/cd-webapp
+name:  cicd-webapp
 
 on:
   workflow_dispatch:
