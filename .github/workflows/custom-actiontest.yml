@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: luumarodrigues/custom-action@v1
+        uses: luumarodrigues/custom-action@master
         with:
           who-to-greet: 'Maria'
           
