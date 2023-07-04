@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - id: foo
-        uses: luumarodrigues/composite-actions@v1
+        uses: luumarodrigues/composite-action@v1
         with:
           who-to-greet: 'Maria'
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
