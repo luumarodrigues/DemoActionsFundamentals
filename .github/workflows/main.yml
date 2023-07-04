@@ -1,0 +1,32 @@
+name: Matrix
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v3.5.3
+      
+      - name: Setup .NET Core SDK
+        uses: actions/setup-dotnet@v3.2.0
+          
+      - name: Install dependencies
+        run: dotnet restore
+        
+      - name: Build WebApi
+        run: dotnet build --configuration Release --no-restore
+        
+      - name: Publish
+        run: dotnet publish -c Release -o ./output
+      
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: webapp
+          path: output
