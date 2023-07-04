@@ -1,4 +1,7 @@
-on: [push]
+name: composite-action
+
+on: 
+  workflow_dispatch
 
 jobs:
   hello_world_job:
