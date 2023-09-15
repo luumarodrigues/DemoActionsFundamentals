@@ -3,13 +3,18 @@ name: Matrix
 on: 
   workflow_dispatch:
 
+env:
+  os: ${{ vars.os }}
+
 jobs:
   build:
     environment: DEV
     strategy:
       matrix:
-        os: ${{ vars.os }}
+        os: ${{ env.os }}
     runs-on: ${{ matrix.os }}
+    env:
+      os: ${{ vars.os }}
 
     steps:
       - uses: actions/checkout@v3.5.3
