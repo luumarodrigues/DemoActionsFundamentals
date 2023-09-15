@@ -5,12 +5,9 @@ on:
 
 jobs:
   build:
-    environment: DEV
-    env:
-      os: ${{ vars.os }}
     strategy:
       matrix:
-        os: ${{ env.os }}
+        os: [ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.os }}
 
     steps:
