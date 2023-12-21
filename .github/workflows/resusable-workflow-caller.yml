@@ -10,7 +10,8 @@ jobs:
     uses: luumarodrigues/SRE.Templates/.github/workflows/build-dotnet.yml@master
     with:
       buildConfiguration: Release
-    permissions: write-all
+    permissions: 
+      actions: write
       
   CD-dev:
     uses: luumarodrigues/SRE.Templates/.github/workflows/deploy-webapp.yml@master
