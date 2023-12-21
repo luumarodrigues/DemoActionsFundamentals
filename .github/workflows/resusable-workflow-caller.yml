@@ -4,14 +4,13 @@ on:
   workflow_dispatch:
   push:
     branches: [ master ]
-
-permissions: write-all
   
 jobs:
   CI:
     uses: luumarodrigues/SRE.Templates/.github/workflows/build-dotnet.yml@master
     with:
       buildConfiguration: Release
+    permissions: write-all
       
   CD-dev:
     uses: luumarodrigues/SRE.Templates/.github/workflows/deploy-webapp.yml@master
